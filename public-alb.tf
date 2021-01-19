@@ -1,11 +1,11 @@
 resource "aws_lb" "public" {
-  name               = "${var.PROJECT_NAME}-${var.ENV}-publci-alb"
+  name               = "${var.PROJECT_NAME}-${var.ENV}-public-alb"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.allow-alb-public.id]
   subnets            = data.terraform_remote_state.vpc.outputs.PUBLIC_SUBNETS
   tags               = {
-    Name             = "${var.PROJECT_NAME}-${var.ENV}-publci-alb"
+    Name             = "${var.PROJECT_NAME}-${var.ENV}-public-alb"
     Environment      = var.ENV
   }
 }
