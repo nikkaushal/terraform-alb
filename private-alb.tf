@@ -45,7 +45,7 @@ resource "aws_lb_listener" "default" {
 
     fixed_response {
       content_type  = "text/plain"
-      message_body  = upper ["Fixed response content"]
+      message_body  = upper ("Fixed response content")
       status_code   = "200"
     }
   }
